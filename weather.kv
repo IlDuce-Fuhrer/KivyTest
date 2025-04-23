@@ -1,0 +1,38 @@
+<WeatherLayout>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 15
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1  # Dark background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    TextInput:
+        id: city_input
+        hint_text: "Enter city"
+        multiline: False
+        size_hint_y: None
+        height: 40
+        foreground_color: 1, 1, 1, 1
+        background_color: 0.2, 0.2, 0.2, 1
+        cursor_color: 1, 1, 1, 1
+
+    Button:
+        text: "Get Weather"
+        size_hint_y: None
+        height: 40
+        background_color: 0.3, 0.3, 0.3, 1
+        color: 1, 1, 1, 1
+        on_press: root.get_weather()
+
+    Label:
+        id: result_label
+        text: ""
+        halign: "left"
+        valign: "top"
+        text_size: self.width, None
+        color: 1, 1, 1, 1
+        size_hint_y: None
+        height: self.texture_size[1] + 20
